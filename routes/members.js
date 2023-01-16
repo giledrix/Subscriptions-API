@@ -1,11 +1,7 @@
 const { response } = require('express');
 const express = require('express');
-
 const router = express.Router();
-
 const membersBL = require('../BL/membersBL');
-
-
 const CurrentUser = require('../Utils/CurrentUser');
 const jwt = require('jsonwebtoken');
 const RSA_PRIVATE_KEY = 'secretkey';

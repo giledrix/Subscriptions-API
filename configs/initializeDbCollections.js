@@ -27,7 +27,7 @@ async function createMembersCollection() {
             allMembersArr.forEach(user => {
 
             
-                const newUser = new MemberModel({ // יוצר אובייקט חדש מסוג המודל שלי
+                const newUser = new MemberModel({ // Create new object of member Model
                     Name: user.name,
                     Email: user.email,
                     City: user.address.city
@@ -37,12 +37,12 @@ async function createMembersCollection() {
 
 
 
-                newUser.save(function (err) { // פונקציה שמירה מוכנה שהבאה עם המודל
+                newUser.save(function (err) { // Built-in save function that came with the model
                     if (err) {
                         console.log(err)
                     }
                     else {
-                        console.log("Member added to collaction");
+                        console.log("Member added to collections");
                     }
                 });
             });
@@ -62,13 +62,13 @@ async function createMoviesCollection() {
     let moviesCollection = await moviesBL.getAllMovies();
 
     if (moviesCollection.length < 1) {
-        let respFromMoviessWS;
+        let respFromMoviesWS;
         let allMoviesArr;
 
         try {
             // get all members from WS using DAL
-            respFromMoviessWS = await moviesWSDAL.getAllMoviesFromWebService();
-            allMoviesArr = respFromMoviessWS.data;
+            respFromMoviesWS = await moviesWSDAL.getAllMoviesFromWebService();
+            allMoviesArr = respFromMoviesWS.data;
         }
         catch (err) {
             console.log("Load all movies from WS is failed , " + err);
@@ -77,19 +77,19 @@ async function createMoviesCollection() {
         if (allMoviesArr) {
             allMoviesArr.forEach(movie => {
 
-                const newUser = new MoviesModel({ // יוצר אובייקט חדש מסוג המודל שלי
+                const newUser = new MoviesModel({ // Create object of movies model
                     Name: movie.name,
                     Genres: movie.genres,
                     Image: movie.image.medium,
                     Premiered: movie.premiered
                 });
 
-                newUser.save(function (err) { // פונקציה שמירה מוכנה שהבאה עם המודל
+                newUser.save(function (err) { // Built-in save function that came with the model
                     if (err) {
                         console.log(err)
                     }
                     else {
-                        console.log("Movie added to collaction");
+                        console.log("Movie added to collections");
                     }
                 });
             });

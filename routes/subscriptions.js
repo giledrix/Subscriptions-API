@@ -59,8 +59,8 @@ router.route('/:id')
 
     });
 
-router.route('/getSubscritionWSToken/:id/:timeout')
-    .get(function (req, resp) { // get subscription toekn
+router.route('/getSubscriptionWSToken/:id/:timeout')
+    .get(function (req, resp) { // get subscription token
 
         var tokenData = jwt.sign({ id: req.params.id },
             RSA_PRIVATE_KEY,
@@ -133,7 +133,7 @@ router.route('/:id')
     });
 
 router.route('/:id')
-    .delete(CurrentUser.checkToken, async function (req, resp) { // delete to delete data
+    .delete(CurrentUser.checkToken, async function (req, resp) { // delete data
 
         // check if token is valid 
         // CurrentUser.verifyUserToken(req, resp);
@@ -154,7 +154,7 @@ router.route('/:id')
             else {
                 let id = req.params.id; // get the id from url(master details)
 
-                let status = await subscriptionsBL.deleteSubscrib(id);
+                let status = await subscriptionsBL.deleteSubscribe(id);
                 return resp.json(status);
             }
         });

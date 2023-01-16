@@ -53,19 +53,19 @@ const updateSubscribe = function(id, subscribe) {
                 reject(err);
             } else {
                 console.log("is updated!!!!");
-                resolve('Subscribtion is Updated');
+                resolve('Subscription is Updated');
             }
         })
     })
 }
 
-const deleteSubscrib = function(id) {
+const deleteSubscribe = function(id) {
     return new Promise((resolve, reject) => {
         subscriptionsModel.findByIdAndDelete(id, function(err) {
             if (err) {
                 reject(err);
             } else {
-                resolve('Subscribtion is Deleted');
+                resolve('Subscription is Deleted');
             }
         })
     })
@@ -75,4 +75,4 @@ const deleteSubscrib = function(id) {
 
 
 
-module.exports = { getAllSubscriptions, getSubscription, addSubscribe, updateSubscribe, deleteSubscrib };
+module.exports = { getAllSubscriptions, getSubscription, addSubscribe, updateSubscribe, deleteSubscribe: deleteSubscribe };
