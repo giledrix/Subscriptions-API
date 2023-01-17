@@ -11,7 +11,6 @@ var app = express();
 
 app.use(cors()); // prevent blocks of CORS policy (block request from unknown domain)
 
-// require('./configs/database'); // run database.js on startup
 require('./configs/initializeDbCollections'); // initialize database from Web Service when server startup
 
 
