@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-
 const subscriptionsBL = require('../BL/subscriptionsBL');
 const CurrentUser = require('../Utils/CurrentUser');
 const jwt = require('jsonwebtoken');
