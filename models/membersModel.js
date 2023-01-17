@@ -8,6 +8,5 @@ let MemberSchema = new mongoose.Schema({
     City: String
 });
 
-
 // mapping Members Collection to the schema.
 module.exports = mongoose.model('members', MemberSchema);
