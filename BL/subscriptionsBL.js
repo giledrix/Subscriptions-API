@@ -1,5 +1,6 @@
 const subscriptionsModel = require('../models/subscriptionsModel');
 
+
 const getAllSubscriptions = function() {
     return new Promise((resolve, reject) => {
         subscriptionsModel.find({}, function(err, sub) {
