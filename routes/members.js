@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 const RSA_PRIVATE_KEY = 'secretkey';
 
 
+
 //Get all members
 router.route('/')
     .get(CurrentUser.checkToken, async function (req, resp) {
